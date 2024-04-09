@@ -28,6 +28,7 @@ class CadastroRequest extends FormRequest
             'telefone' => 'required|max:11|min:11',
             'endereco' => 'required|max:80|min:5',
             'email' => 'required|max:120|min:5',
+            'CPF' => 'required|max:11|min:11',
             'password' => 'required|min:5',
 
         ];
@@ -58,7 +59,11 @@ class CadastroRequest extends FormRequest
         'email.required' => 'O email é obrigatório',
         'email.max' => 'O email deve conter no máximo 120 caracteres',
         'email.min' => 'O email deve conter no mínimo 5 caracteres',
-        
+
+        'CPF.required' => 'O CPF é obrigatório',
+        'CPF.max' => 'O CPF deve conter no máximo 11 caracteres',
+        'CPF.min' => 'O CPF deve conter no mínimo 11 caracteres',
+
         'password.required' => 'A senha é obrigatória',
         'password.min' => 'A senha deve conter no mínimo 5 caracteres',
     ];

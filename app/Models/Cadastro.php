@@ -12,6 +12,7 @@ class Cadastro extends Model
         'telefone',
         'endereco',
         'email',
+        'CPF',
         'password',
         'imagem'
     ];

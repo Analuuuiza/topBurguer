@@ -18,6 +18,7 @@ class CadastroController extends Controller
                 'telefone' => $cadastro->telefone,
                 'endereco' => $cadastro->endereco,
                 'email' => $cadastro->email,
+                'CPF' => $cadastro->CPF,
                 'password' => Hash::make($cadastro->password),
                 'imagem' => asset('storage/'. $cadastro->imagem),
             ];
