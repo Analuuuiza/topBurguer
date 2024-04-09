@@ -6,7 +6,7 @@ use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 
-class CadastroRequest extends FormRequest
+class ProdutoRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,11 +25,8 @@ class CadastroRequest extends FormRequest
     {
         return [
             'nome' => 'required|max:80|min:5',
-            'telefone' => 'required|max:11|min:11',
-            'endereco' => 'required|max:80|min:5',
-            'email' => 'required|max:120|min:5',
-            'password' => 'required|min:5',
-
+            'preco' => 'required|decimal:2',
+            'ingredientes' => 'required|max:100|min:5'
         ];
     }
 
@@ -47,20 +44,12 @@ class CadastroRequest extends FormRequest
         'nome.max' => 'O nome deve conter no máximo 80 caracteres',
         'nome.min' => 'O nome deve conter no mínimo 5 caracteres',
 
-        'telefone.required' => 'O telefone é obrigatório',
-        'telefone.max' => 'O telefone deve conter no máximo 11 caracteres',
-        'telefone.min' => 'O telefone deve conter no mínimo 11 caracteres',
-
-        'endereco.required' => 'o endereço é obrigaório',
-        'endereco.max' => 'O endereço deve conter no máximo 80 caracteres',
-        'endereco.min' => 'O endereço deve conter no mínimo 5 caracteres',
-
-        'email.required' => 'O email é obrigatório',
-        'email.max' => 'O email deve conter no máximo 120 caracteres',
-        'email.min' => 'O email deve conter no mínimo 5 caracteres',
+        'preco.required' => 'O preço é obrigatório',
+        'preco.decimal' => 'O campo preço deve ser numérico com 2 casas decimais.',
         
-        'password.required' => 'A senha é obrigatória',
-        'password.min' => 'A senha deve conter no mínimo 5 caracteres',
+        'ingredientes.required' => 'Os ingredientes são obrigatórios',
+        'ingredientes.max' => 'Os ingredientes devem conter no máximo 100 caracteres',
+        'ingredientes.min' => 'Os ingredientes devem conter no mínimo 5 caracteres'
     ];
 }
 }
