@@ -7,8 +7,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/produtos', [ProdutoController::class, 'index']);
 Route::post('/produtos', [ProdutoController::class, 'store']);
+Route::get('produtos/retornarTodos', [ProdutoController::class, 'retornarTodos']);
 
 Route::get('/cadastros', [CadastroController::class, 'index']);
 Route::post('/cadastros', [CadastroController::class, 'store']);
-
 

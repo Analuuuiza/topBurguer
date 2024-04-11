@@ -12,6 +12,7 @@ class ProdutoController extends Controller
 
         $produtosComImagem = $produtos->map(function($produto){
             return [
+                'id' => $produto->id,
                 'nome' => $produto->nome,
                 'preco' => $produto->preco,
                 'ingredientes' => $produto->ingredientes,
@@ -32,6 +33,15 @@ class ProdutoController extends Controller
         }
         $produto = Produto::create($produtoData);
         return response()->json(['produto'=>$produto], 201);
+    }
+
+    public function retornarTodos(){
+        $produto = Produto::all();
+    
+        return response()->json([
+            'status' => true,
+            'data' => $produto
+        ]);
     }
 
 }
