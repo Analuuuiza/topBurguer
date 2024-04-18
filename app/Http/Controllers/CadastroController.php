@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CadastroRequest;
 use App\Models\Cadastro;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -26,7 +27,7 @@ class CadastroController extends Controller
         return response()->json($cadastrosComImagem);
     }
 
-    public function store(Request $request){
+    public function store(CadastroRequest $request){
         $cadastroData = $request->all();
 
         if($request->hasFile('imagem')){
